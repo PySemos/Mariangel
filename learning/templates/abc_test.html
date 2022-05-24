@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+	{% load static %}
+	<style>
+		span{
+			font-size: 42px;
+		}
+		img{
+			width : 2vw;
+		}
+		button{
+			cursor: pointer;
+			background-color: white;
+			border: none
+		}
+
+	</style>
+</head>
+<body>
+	<div id ="content">
+		<div id = "primero" class = "letra">
+			<span>A</span>
+			<div style="display: inline;"><button class = "Arriba"><img src="{% static 'images/up arrow.jpeg' %}"></button><button class = "Abajo"><img src="{% static 'images/down arrow.jpeg' %}"></button></div>
+		</div>
+		<div id = "segundo"  class = "letra">
+			<span>B</span>
+			<div style="display: inline;"><button class = "Arriba"><img src="{% static 'images/up arrow.jpeg' %}"></button><button class = "Abajo"><img src="{% static 'images/down arrow.jpeg' %}"></button></div>
+		<div id = "tercero"  class = "letra">
+			<span>C</span>
+			<div style="display: inline;"><button class = "Arriba"><img src="{% static 'images/up arrow.jpeg' %}"></button><button class = "Abajo"><img src="{% static 'images/down arrow.jpeg' %}"></button></div>
+		<div id = "cuarto"  class = "letra">
+			<span>D</span>
+			<div style="display: inline;"><button class = "Arriba"><img src="{% static 'images/up arrow.jpeg' %}"></button><button class = "Abajo"><img src="{% static 'images/down arrow.jpeg' %}"></button></div>
+		<div id = "quinto"  class = "letra">
+			<span>E</span>
+			<div style="display: inline;"><button class = "Arriba"><img src="{% static 'images/up arrow.jpeg' %}"></button><button class = "Abajo"><img src="{% static 'images/down arrow.jpeg' %}"></button></div>
+	</div>
+	<form action = "/tests/ABC/1" method = "POST">
+		<input type="submit" name="submit_malo" id ="submit" value = "Evaluar">
+	</form>
+	<script src="{% static 'js/abc.js' %}"></script>
+</body>
+</html>

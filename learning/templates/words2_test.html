@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
+    <style>
+        #submit{
+            background-color:blueviolet;
+            margin-bottom:20px;
+        }
+    </style>
+    <title>Words 1</title>
+</head>
+<body>
+    <header>
+    <div class="header">
+
+        <div class="atras">
+            <a href="/Palabras/1"></a>
+            
+        </div>
+        <div class="inicio">
+            <a href="/">Inicio</a>
+        </div>
+    </div>
+</header>
+    
+        
+    <div class="content" id = "content">
+        <center><h1>Adivina la palabra!!!!</h1></center>
+                <div class="section1" id = "primero">
+                    <img src="{% static 'images/pullover.png' %}" alt="">    
+                    <div class="botones">
+                        <input type="button" name="Shoes" id="red" value="SHOES"><br>
+                        <input type="button" name="Blouse" id="yellow" value="BLOUSE"><br>
+                        <input type="button" name="T-Shirt" id="blue" value="T-SHIRT">
+                    </div>
+                </div>
+                
+    </div>
+    <script>
+        window.onload = page;
+       function page(){
+           var Shoes = document.getElementsByName("Shoes");
+           Shoes[0].addEventListener("click",()=>{
+               window.open("/Palabras/2","_self");
+           });
+           var Blouse = document.getElementsByName("Blouse");
+           Blouse[0].addEventListener("click",()=>{
+               window.open("/Palabras/2","_self");
+           });
+           var tShirt = document.getElementsByName("T-Shirt");
+           tShirt[0].addEventListener("click",()=>{
+               var content = document.getElementById("content");
+               var imagen = "{% static 'images/Jeans.png' %}"
+               content.innerHTML+=`<div class="section2" id = "segundo">
+                    <img src=${imagen}>
+                    <div class="botones">
+                        <input type="button" name="Jeans" id="blue2" value="JEANS"><br>
+                        <input type="button" name="Pants" id="yellow2" value="PANTS"><br>
+                        <input type="button" name="Shorts" id="red2" value="SHORTS">
+                    </div>                    
+                </div>`
+                window.open("/tests/Palabras/2#blue2","_self")
+                page2();
+           });
+       } 
+    function page2(){
+        var Pants = document.getElementsByName("Pants");
+        Pants[0].addEventListener("click",()=>{
+            window.open("/Palabras/2","_self");
+        });
+        var Shorts = document.getElementsByName("Shorts");
+        Shorts[0].addEventListener("click",()=>{
+            window.open("/Palabras/2","_self");
+        });
+        var Jeans = document.getElementsByName("Jeans");
+        Jeans[0].addEventListener("click",()=>{
+            var content = document.getElementById("content");
+            var imagen = "{% static 'images/Skirts.png' %}"
+            content.innerHTML+=`<div class="section2" id = "segundo">
+                 <img src=${imagen}>
+                 <div class="botones">
+                     <input type="button" name="Skirt" id="red3" value="SKIRT"><br>
+                     <input type="button" name="Pullover" id="yellow3" value="PULLOVER"><br>
+                     <input type="button" name="T-Shirt2" id="blue3" value="T-SHIRT">
+                 </div>                    
+             </div>`
+             window.open("/tests/Palabras/2#blue3","_self")
+             page3();
+        });
+    } 
+       function page3(){
+           Pullover = document.getElementsByName("Pullover");
+           Pullover[0].addEventListener("click",()=>{
+               window.open("/Palabras/2","_self");
+           });
+
+           var tShirt = document.getElementsByName("T-Shirt2");
+           tShirt[0].addEventListener("click",()=>{
+               window.open("/Palabras/2","_self");
+           });
+           var Skirt = document.getElementsByName("Skirt");
+           Skirt[0].addEventListener("click",()=>{
+            var content = document.getElementById("content");
+            var imagen = "{% static 'images/Dress.png' %}"
+                content.innerHTML+=`<div class="section2" id = "segundo">
+                <img src=${imagen}>
+                <div class="botones">
+                    <input type="button" name="Jeans2" id="yellow4" value="JEANS"><br>
+                    <input type="button" name="Skirt2" id="red4" value="SKIRT"><br>
+                    <input type="button" name="Dress" id="blue4" value="DRESS">
+                </div>                    
+             </div>`
+             window.open("/tests/Palabras/2#blue4","_self")
+             page4();
+           });
+       }
+       function page4(){
+        var Jeans = document.getElementsByName("Jeans2");
+        Jeans[0].addEventListener("click",()=>{
+            window.open("/Palabras/2","_self");
+        });
+
+        var Skirt = document.getElementsByName("Skirt2");
+        Skirt[0].addEventListener("click",()=>{
+            window.open("/Palabras/2","_self");
+        });
+        var Dress = document.getElementsByName("Dress");
+        Dress[0].addEventListener("click",()=>{
+            var content = document.getElementById("content");
+            content.innerHTML+='<form action="/tests/Palabras/2" method="POST"><center><input name = "bueno" id="submit" type="submit" value="Evaluar"></center></form>'
+            window.open("/tests/Palabras/2#submit","_self")
+        });
+        
+       }
+    </script>
+
+</body>
+</html>

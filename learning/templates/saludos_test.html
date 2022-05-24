@@ -1,0 +1,297 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
+    <style>
+        #submit{
+            background-color: blueviolet;
+            color: white;
+        }
+        img{
+            border-radius:15px;
+            border:solid 1px black;
+            cursor:pointer;
+        }
+        .cuadro{
+            background-color: red;
+        }
+        #submit{
+            color:white;
+            background-color: blueviolet;
+        }
+        #red, #red2, #red3, #red4, #red5, #red6, #red7{
+            width: 200px;
+            margin-bottom: 20px;
+            height: 24px;
+            color: white;
+            background-color: red;
+            border: 1px solid red;
+            border-radius: 5px;
+        }
+        
+        #blue, #blue2, #blue3, #blue4, #blue5, #blue6, #blue7{
+            width: 200px;
+            margin-bottom: 20px;
+            height: 24px;
+            color: white;
+            background-color: blue;
+            border: 1px solid blue;
+            border-radius: 5px;
+        }
+        
+        #yellow, #yellow2, #yellow3, #yellow4, #yellow5, #yellow6, #yellow7{
+            width: 200px;
+            margin-bottom: 20px;
+            height: 24px;
+            color: black;
+            background-color: yellow;
+            border: 1px solid yellow;
+            border-radius: 5px;
+        }
+        
+    </style>
+    
+    <title>Red</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+    
+            <div class="atras">
+                <a href="/Frases/3"></a>
+                
+            </div>
+            <div class="inicio">
+                <a href="/">Inicio</a>
+            </div>
+        </div>
+    </header>
+    
+        
+    <div class="content" id = "content">
+                <center><h1>Diga la frase!!!!</h1></center>
+                <div class="section1" id = "primero">
+                    <img src = "{% static 'images/Sound.png' %}" id = "Primero"></img>
+                    <div class="botones">
+                        <input type="button" name="NiceToMeetYou" id="blue" value="Nice to meet you"><br>
+                        <input type="button" name="GoodNight" id="yellow" value="Good Night"><br>
+                        <input type="button" name="GoodMorning" id="red" value="Good Morning">
+                    </div>
+                </div>
+                
+    </div>
+    <script>
+        imagen = "{% static 'images/Sound.png' %}"
+        window.onload = page;
+        function page(){
+            document.getElementById("Primero").addEventListener("click",()=>{
+                audio = new Audio("{% static 'media/Good Morning.m4a' %}")
+                audio.play();
+            })
+            var goodMorning = document.getElementById("red");
+            goodMorning.addEventListener("click",()=>{
+            var content = document.getElementById("content");
+               content.innerHTML+=`<div class="section2" id = "segundo">
+                    <img src=${imagen} id = "Segundo">
+                    <div class="botones">
+                        <input type="button" name="GoodNight" id="yellow2" value="Good Night"><br>
+                        <input type="button" name="NiceToMeetYou" id="blue2" value="How are you"><br>
+                        <input type="button" name="What is your name" id="red2" value="My name is">
+                    </div>                    
+                </div>`
+                window.open("#red2","_self")
+                page2();
+           });
+           var blue1 = document.getElementById("blue");
+           blue1.addEventListener("click",()=>{
+            window.open("/Frases/3","_self");
+           });
+           var yellow1 = document.getElementById("yellow");
+           yellow1.addEventListener("click",()=>{
+                window.open("/Frases/3","_self");
+           });
+       } 
+
+
+       function page2(){
+        document.getElementById("Segundo").addEventListener("click",()=>{
+            audio = new Audio("{% static 'media/Good Night.m4a' %}")
+            audio.play();
+        })
+        var goodNight = document.getElementById("yellow2");
+        goodNight.addEventListener("click",()=>{
+           var content = document.getElementById("content");
+           content.innerHTML+=`
+           <div class="section2" id = "tercero">
+                <img src=${imagen} id = "Tercero">
+                <div class="botones">
+                    <input type="button" name="GoodNight" id="yellow3" value="Good Morning"><br>
+                    <input type="button" name="GoodMorning" id="red3" value="What is your name"><br>
+                    <input type="button" name="MyNameIs" id="blue3" value="My name is">
+                </div>                    
+            </div>`
+            window.open("#red3","_self")
+            page3();
+       });
+       var blue2 = document.getElementById("blue2");
+       blue2.addEventListener("click",()=>{
+        window.open("/Frases/3","_self");
+       });
+       var red2 = document.getElementById("red2");
+       red2.addEventListener("click",()=>{
+            window.open("/Frases/3","_self");
+       });
+       }
+       
+
+
+
+       function page3(){
+        document.getElementById("Tercero").addEventListener("click",()=>{
+            audio = new Audio("{% static 'media/MyNameIS.m4a' %}")
+            audio.play();
+        })
+        var blue3 = document.getElementById("blue3");
+        blue3.addEventListener("click",()=>{
+            var content = document.getElementById("content");
+            content.innerHTML+=`<div class ="section2" id = "cuarto">
+                <img src=${imagen} id = "Cuarto">
+                <div class="botones">
+                    <input type="button" name="GoodNight" id="yellow4" value="Nice to meet you"><br>
+                    <input type="button" name="GoodMorning" id="red4" value="What is your name"><br>
+                    <input type="button" name="NiceToMeetYou" id="blue4" value="Good Morning">
+                </div>
+            </div>`
+            window.open("#red4","_self")
+            page4();
+       });
+       var yellow3 = document.getElementById("yellow3");
+       yellow3.addEventListener("click",()=>{
+        window.open("/Frases/3","_self");
+       });
+       var red3 = document.getElementById("red3");
+       red3.addEventListener("click",()=>{
+            window.open("/Frases/3","_self");
+       });
+       }
+
+        
+       
+        //Nice to meet you
+        function page4(){
+        document.getElementById("Cuarto").addEventListener("click",()=>{
+            audio = new Audio("{% static 'media/NiceToMeetYou.m4a' %}")
+            audio.play();
+        })
+        var yellow4 = document.getElementById("yellow4");
+        yellow4.addEventListener("click",()=>{
+            var content = document.getElementById("content");
+            content.innerHTML+=`<div class ="section2" id = "quinto">
+                <img src=${imagen} id = "Quinto">
+                <div class="botones">
+                    <input type="button" name="GoodMorning" id="red5" value="What is your name"><br>
+                    <input type="button" name="GoodNight" id="yellow5" value="Good Morning"><br>
+                    <input type="button" name="NiceToMeetYou" id="blue5" value="Good Night">
+                </div>
+            </div>`
+            window.open("#red5","_self")
+            page5();
+       });
+       var blue4 = document.getElementById("blue4");
+       blue4.addEventListener("click",()=>{
+        window.open("/Frases/3","_self");
+       });
+       var red4 = document.getElementById("red4");
+       red4.addEventListener("click",()=>{
+            window.open("/Frases/3","_self");
+       });
+       }
+
+
+       //What's your name
+       function page5(){
+        document.getElementById("Quinto").addEventListener("click",()=>{
+            audio = new Audio("{% static 'media/WhatIsYourName.m4a' %}")
+            audio.play();
+        })
+        var red5 = document.getElementById("red5");
+        red5.addEventListener("click",()=>{
+            var content = document.getElementById("content");
+            content.innerHTML+=`<div class ="section2" id = "quinto">
+                <img src=${imagen} id = "Sexto">
+                <div class="botones">
+                    <input type="button" name="GoodNight" id="yellow6" value="My name is"><br>
+                    <input type="button" name="NiceToMeetYou" id="blue6" value="Good Night"><br>
+                    <input type="button" name="GoodMorning" id="red6" value="How are you">
+                </div>
+            </div>`
+            window.open("#red6","_self")
+            page6();
+       });
+       var blue5 = document.getElementById("blue5");
+       blue5.addEventListener("click",()=>{
+        window.open("/Frases/3","_self");
+       });
+       var yellow5 = document.getElementById("yellow5");
+       yellow5.addEventListener("click",()=>{
+            window.open("/Frases/3","_self");
+       });
+       }
+
+    function page6(){
+        document.getElementById("Sexto").addEventListener("click",()=>{
+            audio = new Audio("{% static 'media/HowAreYou.m4a' %}")
+            audio.play();
+        })
+        var red6 = document.getElementById("red6");
+        red6.addEventListener("click",()=>{
+            var content = document.getElementById("content");
+            content.innerHTML+=`<div class ="section2" id = "quinto">
+                <img src=${imagen} id = "Septimo">
+                <div class="botones">
+                    <input type="button" name="GoodNight" id="yellow7" value="I am fine, Thanks for asking"><br>
+                    <input type="button" name="NiceToMeetYou" id="blue7" value="My name is"><br>
+                    <input type="button" name="GoodMorning" id="red7" value="How are you">
+                </div>
+            </div>`
+            window.open("#red7","_self")
+            page7();
+       });
+       var blue6 = document.getElementById("blue6");
+       blue6.addEventListener("click",()=>{
+        window.open("/Frases/3","_self");
+       });
+       var yellow6 = document.getElementById("yellow6");
+       yellow6.addEventListener("click",()=>{
+            window.open("/Frases/3","_self");
+       });
+    }
+    function page7(){
+        document.getElementById("Septimo").addEventListener("click",()=>{
+            audio = new Audio("{% static 'media/IAmFineThanksForAsking.m4a' %}")
+            audio.play();
+        })
+        var yellow7 = document.getElementById("yellow7");
+        yellow7.addEventListener("click",()=>{
+            var content = document.getElementById("content");
+            content.innerHTML+='<form action="/tests/Frases/3" method="POST"><center><input type="submit" id = "submit" value="Evaluar" id ="submit"></center></form>'
+            window.open("#submit","_self")
+            page6();
+       });
+       var blue7 = document.getElementById("blue7");
+       blue7.addEventListener("click",()=>{
+        window.open("/Frases/3","_self");
+       });
+       var red7 = document.getElementById("red7");
+       red7.addEventListener("click",()=>{
+            window.open("/Frases/3","_self");
+       });
+    }
+    </script>
+
+</body>
+</html>
+

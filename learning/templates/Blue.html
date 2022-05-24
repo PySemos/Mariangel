@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
+    <style>
+        .cuadro{
+            background-color: blue;
+        }
+        #submit{
+            background-color: blue;
+            color:white
+        }
+    </style>
+    
+    <title>Blue</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+    
+            <div class="atras">
+                <a href="/Colores/2"></a>
+                
+            </div>
+            <div class="inicio">
+                <a href="/">Inicio</a>
+            </div>
+        </div>
+    </header>
+    
+        
+    <div class="content" id = "content">
+        <center><h1>Adivina el color!!!!</h1></center>
+                <div class="section1" id = "primero">
+                    <div class="cont_cuadro">
+
+                        <div class="cuadro">
+                            
+                        </div>
+                    </div>
+                    <div class="botones">
+                        <input type="button" name="blue" id="blue" value="BLUE"><br>
+                        <input type="button" name="yellow" id="yellow" value="YELLOW"><br>
+                        <input type="button" name="red" id="red" value="RED">
+                    </div>
+                </div>
+                
+    </div>
+    <script>
+        window.onload = page;
+       function page(){
+           var segundo = document.getElementById("segundo");
+           red1 = document.getElementById("red");
+           red1.addEventListener("click",()=>{
+               window.open("/Colores/2","_self");
+           });
+           var blue1 = document.getElementById("blue");
+           blue1.addEventListener("click",()=>{
+            var content = document.getElementById("content");
+               var imagen = "{% static 'images/mar.jpeg' %}"
+               content.innerHTML+=`<div class="section2" id = "segundo">
+                    <img src=${imagen}>
+                    <div class="botones">
+                        <input type="button" name="red2" id="red2" value="RED"><br>
+                        <input type="button" name="blue2" id="blue2" value="BLUE"><br>
+                        <input type="button" name="yellow2" id="yellow2" value="YELLOW">
+                    </div>                    
+                </div>`
+                page2();
+               
+           });
+           var yellow1 = document.getElementById("yellow");
+           yellow1.addEventListener("click",()=>{
+                window.open("/Colores/2","_self")
+           });
+       } 
+       function page2(){
+        var segundo = document.getElementById("segundo");
+           red2 = document.getElementById("red2");
+           red2.addEventListener("click",()=>{
+               window.open("/Colores/2","_self");
+           });
+           var blue2 = document.getElementById("blue2");
+           blue2.addEventListener("click",()=>{
+            var content = document.getElementById("content");
+               content.innerHTML+='<form action="/tests/Colores/2" method = "POST"><center><input type="submit" id ="submit" value="Evaluar"></center></form>'
+
+           });
+           var yellow2 = document.getElementById("yellow2");
+           yellow2.addEventListener("click",()=>{
+            window.open("/Colores/2","_self");
+           });
+       }
+    </script>
+
+</body>
+</html>
+

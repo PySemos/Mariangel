@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
+    <style>
+        #submit{
+            background-color: blueviolet;
+            color: white;
+        }
+    </style>
+    <title>Simult</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+    
+            <div class="atras">
+                <a href="/Colores/3"></a>
+                
+            </div>
+            <div class="inicio">
+                <a href="/">Inicio</a>
+            </div>
+        </div>
+    </header>
+    
+        
+    <div class="content" id = "content">
+        <center><h1>Adivina el color!!!!</h1></center>
+                <div class="section1" id = "primero">
+
+                    <img src="{%static 'images/moño.jpeg' %}">
+                    <div class="botones">
+                        <input type="button" name="brown" id="brown" class = "brown" value="BROWN"><br>
+                        <input type="button" name="black" id="black" class = "black" value="BLACK"><br>
+                        <input type="button" name="white" id="white" class = "white" value="WHITE"><br>
+                        <input type="button" name="pink" id="pink" class = "pink" value="PINK">
+                    </div>
+                </div>
+                
+    </div>
+    <script>
+        window.onload = page;
+        function goBack(){
+            window.open("/Colores/6","_self");
+            return;
+        }
+        function page(){
+            var brown = document.getElementById("brown")
+            var black = document.getElementById("black");
+            var white = document.getElementById("white");
+            var pink = document.getElementById("pink");
+            brown.addEventListener("click",goBack);
+            black.addEventListener("click",goBack);
+            white.addEventListener("click",goBack);
+            pink.addEventListener("click",()=>{
+                content = document.getElementById("content");
+                image = "{% static 'images/Pelota.jpeg' %}";
+                content.innerHTML+=`
+                <div class="section1" >
+                    <img src = ${image}>
+                        <div class="botones">
+                            <input type="button" name="pink" id="pink2" class = "pink" value="PINK"><br>
+                            <input type="button" name="white" id="white2" class = "white" value="WHITE"><br>
+                            <input type="button" name="brown" id="brown2" class = "brown" value="BROWN"><br>
+                            <input type="button" name="black" id="black2" class = "black" value="BLACK">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                `
+                window.open("/tests/Colores/6#brown2","_self")
+                page2();
+            })
+        }
+        function page2(){
+            var brown = document.getElementById("brown2")
+            var black = document.getElementById("black2");
+            var white = document.getElementById("white2");
+            var pink = document.getElementById("pink2");
+            brown.addEventListener("click",goBack);
+            black.addEventListener("click",goBack);
+            white.addEventListener("click",()=>{
+                content = document.getElementById("content");
+                image = "{% static 'images/Sombrilla.jpeg' %}";
+                content.innerHTML+=`
+                <div class = "section2">
+                    <img src = ${image}>
+                    
+                    <div class="botones">
+                        <input type="button" name="brown" id="brown3" class = "brown" value="BROWN"><br>
+                        <input type="button" name="pink" id="pink3" class = "pink" value="PINK"><br>
+                        <input type="button" name="white3" id="white3" class = "white" value="WHITE"><br>
+                        <input type="button" name="black" id="black3" class = "black" value="BLACK">
+                    </div>
+                </div>
+                `
+                window.open("/tests/Colores/6#brown3","_self")
+                page3()
+                ;});
+            pink.addEventListener("click",goBack)
+        }
+        function page3(){
+            var brown = document.getElementById("brown3")
+            var black = document.getElementById("black3");
+            var white = document.getElementById("white3");
+            var pink = document.getElementById("pink3");
+            brown.addEventListener("click",goBack);
+            black.addEventListener("click",()=>{
+                content = document.getElementById("content");
+                image = "{% static 'images/Sombrero.jpeg' %}";
+                content.innerHTML+=`
+                <div class = "section2">
+                    <img src = ${image}>
+                    <div class="botones">
+                        <input type="button" name="pink" id="pink4" class = "pink" value="PINK"><br>
+                        <input type="button" name="black" id="black4" class = "black" value="BLACK"><br>
+                        <input type="button" name="white4" id="white4" class = "white" value="WHITE"><br>
+                        <input type="button" name="brown4" id="brown4" class = "brown" value="BROWN">
+                    </div>
+                </div>
+                `
+                window.open("/tests/Colores/6#pink4","_self")
+                page4();});
+            white.addEventListener("click",goBack);
+            pink.addEventListener("click",goBack);
+        }
+        function page4(){
+            var brown = document.getElementById("brown4")
+            var black = document.getElementById("black4");
+            var white = document.getElementById("white4");
+            var pink = document.getElementById("pink4");
+            brown.addEventListener("click",()=>{
+                content = document.getElementById("content");
+                content.innerHTML+='<form action="/tests/Colores/6" method="POST"><center><input type="submit" id = "submit" value="Evaluar" id ="submit"></center></form>'
+                window.open("/tests/Colores/6#submit","_self");
+                });
+            black.addEventListener("click",goBack);
+            white.addEventListener("click",goBack);
+            pink.addEventListener("click",goBack);
+        }
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
+    <style>
+        #submit{
+            background-color:blueviolet;
+            margin-bottom:20px;
+        }
+    </style>
+    <title>Words 1</title>
+</head>
+<body>
+    <header>
+    <div class="header">
+
+        <div class="atras">
+            <a href="/Palabras/1"></a>
+            
+        </div>
+        <div class="inicio">
+            <a href="/">Inicio</a>
+        </div>
+    </div>
+</header>
+    
+        
+    <div class="content" id = "content">
+        <center><h1>Adivina la palabra!!!!</h1></center>
+                <div class="section1" id = "primero">
+                    <img src="{% static 'images/Ball.png' %}" alt="">    
+                    <div class="botones">
+                        <input type="button" name="Bike" id="yellow" value="BIKE"><br>
+                        <input type="button" name="Ball" id="red" value="BALL"><br>
+                        <input type="button" name="Donut" id="blue" value="DONUT">
+                    </div>
+                </div>
+                
+    </div>
+    <script>
+        window.onload = page;
+       function page(){
+           var Bike = document.getElementsByName("Bike");
+           Bike[0].addEventListener("click",()=>{
+               window.open("/Palabras/1","_self");
+           });
+           var Donut = document.getElementsByName("Donut");
+           Donut[0].addEventListener("click",()=>{
+               window.open("/Palabras/1","_self");
+           });
+           var Ball = document.getElementsByName("Ball");
+           Ball[0].addEventListener("click",()=>{
+               var content = document.getElementById("content");
+               var imagen = "{% static 'images/Train.png' %}"
+               content.innerHTML+=`<div class="section2" id = "segundo">
+                    <img src=${imagen}>
+                    <div class="botones">
+                        <input type="button" name="Train" id="yellow2" value="TRAIN"><br>
+                        <input type="button" name="Camera" id="red2" value="CAMERA"><br>
+                        <input type="button" name="Box" id="blue2" value="BOX">
+                    </div>                    
+                </div>`
+                window.open("/tests/Palabras/1#blue2","_self")
+                page2();
+           });
+       } 
+    function page2(){
+        var Camera = document.getElementsByName("Camera");
+        Camera[0].addEventListener("click",()=>{
+            window.open("/Palabras/1","_self");
+        });
+        var BOX = document.getElementsByName("Box");
+        BOX[0].addEventListener("click",()=>{
+            window.open("/Palabras/1","_self");
+        });
+        var Train = document.getElementsByName("Train");
+        Train[0].addEventListener("click",()=>{
+            var content = document.getElementById("content");
+            var imagen = "{% static 'images/Corn.png' %}"
+            content.innerHTML+=`<div class="section2" id = "segundo">
+                 <img src=${imagen}>
+                 <div class="botones">
+                     <input type="button" name="House" id="yellow3" value="HOUSE"><br>
+                     <input type="button" name="Camera" id="red3" value="CAMERA"><br>
+                     <input type="button" name="Corn" id="blue3" value="CORN">
+                 </div>                    
+             </div>`
+             window.open("/tests/Palabras/1#blue3","_self")
+             page3();
+        });
+    } 
+       function page3(){
+           var House = document.getElementsByName("House");
+           House[0].addEventListener("click",()=>{
+               window.open("/Palabras/1","_self");
+           });
+
+           var Camera = document.getElementsByName("Camera");
+           Camera[0].addEventListener("click",()=>{
+               window.open("/Palabras/1","_self");
+           });
+           var Corn = document.getElementsByName("Corn");
+           Corn[0].addEventListener("click",()=>{
+               var content = document.getElementById("content");
+               content.innerHTML+='<form action="/tests/Palabras/1" method="POST"><center><input name = "bueno" id="submit" type="submit" value="Evaluar"></center></form>'
+               window.open("/tests/Palabras/1#submit","_self")
+           });
+       }
+    </script>
+
+</body>
+</html>

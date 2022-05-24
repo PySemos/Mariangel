@@ -1,0 +1,150 @@
+*{
+    box-sizing: border-box;
+    font-family: cursive
+}
+
+
+
+.cuenta{
+    display: flex;
+    float: left;
+    margin:0;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+}
+
+.cuenta a{
+    font-family: sans-serif;
+    margin: 0;
+    padding-top: 5px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 50%; 
+    width: 30px;
+    height: 30px;
+    color: black;
+}
+
+html{
+    min-height: 100%;
+}
+
+body{
+    margin: 0;
+    background-image: url(../images/Seccione.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+}
+
+header a{
+    text-decoration: none;
+    margin: 0 5px;
+    font-weight: bold;
+    color: cyan;
+}
+a:hover{
+    color: rgb(159, 84, 230);
+}
+
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+
+header{
+    background-color: rgb(8, 38, 102);
+    text-align: center;
+}
+
+header .container{
+    margin: 0;
+    padding: 20px 30px ;
+}
+
+.section{
+    text-align: center;
+}
+
+.section p{
+    margin: 0;
+}
+
+.section a{
+    text-decoration:none;
+    font-size: 23px;
+    color: rgb(0, 0, 0);
+    font-weight:bold
+}
+
+.carta{
+    margin: 70px;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 20px 100px;
+    max-width: 500px;
+}
+
+#colores{
+    background-color: hotpink;
+}
+
+.section :nth-child(2){
+    background-color: yellow;
+}
+
+.section :nth-child(3){
+    background-color: cyan;
+}
+
+.section :nth-child(4){
+    background-color: green;
+}
+
+@media (min-width:500px) and (max-width:767px){
+    .section{
+        width: 500px;
+        margin: 0 auto;
+    }
+
+    .section a{
+        font-size: 26px;
+    }
+}
+
+@media (min-width:767px){
+    
+    header .container nav{
+        text-align: right;
+    }
+    
+    
+    .carta{
+        display: inline-block;
+        width: 300px;
+    }
+    .section a{
+        font-size: 26px;
+    }
+}
+
+@media (min-width:1300px){
+    .carta{
+        width: 570px;
+        height: 75px;
+    }
+}
+
+@media (max-width:440px){
+    .section a{
+        font-size: 16px;
+
+    }
+
+    .carta{
+        width: 90%;
+        margin: 70px auto;
+    }
+}

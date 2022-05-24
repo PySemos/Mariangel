@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'css/olvidar.css' %}">
+    <title>AprenderIngles</title>
+</head>
+    <body>
+        <header>
+            <div class="container">
+                {% if initial_username%}
+                    <div class="cuenta"><a href="/info/myaccount">{{initial_username}}</a></div>
+                {% endif %}
+
+                {% if not initial_username%}
+                    <div class="cuenta"><a href="">?</a></div>
+                {% endif %}
+                
+                <nav>
+                    <a href="/">Inicio</a>
+                    <a href="/Inicio-Sesion/">Login</a>
+                    <a href="/registro/">Registro</a>
+                    <a href="/#planes">Plan</a>
+                    <a href="/Contacto">Contacto</a>
+                    <a href="/Salir-Sesion">Log out</a>
+                    <a href="/Secciones">Secciones</a>
+                </nav>
+            </div>
+        </header>
+        <div class="cuadro">
+            <div class="content">
+                <form action = "/OlvidarContrasenia/" method="POST">
+                    {% if wrong_aut %}
+                        <script>
+                            alert("No hemos podido identificarle, lo sentimos")
+                        </script>
+                        <input type="text" name="test_email_username" id="txt_email_username" placeholder="Inserte su email o nombre" autofocus><br>
+                        <input type="text" name="ID" id="id" required placeholder="Introduzca su Cédula" autofocus>
+                    {% endif %}
+                    {% if not wrong_aut %}
+                        <input type="text" name="test_email_username" id="txt_email_username" placeholder="Inserte su email o nombre" autofocus><br>
+                        <input type="text" name="ID" id="id" required placeholder="Introduzca su Cédula" autofocus>
+                    {% endif %}
+                    {%if not wrong_password_again %}
+                    <input type="password" name="change_password" placeholder="Nueva contraseña"id="cambiocontrasenia" required autofocus><br>
+                    {% endif %}
+                    {%if wrong_password_again %}
+                        <script>
+                            alert("Contrasenia no coincide")
+                        </script>
+                        <input type="password" name="change_password" placeholder="Nueva contraseña"id="cambiocontrasenia" required autofocus><br>
+                    {% endif %}
+                    <input type="password" name="change_password_again" placeholder="Confirmar contraseña" id="confirmar" required autofocus><br>
+                    <input type="submit" value="Cambiar" id="submit">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
